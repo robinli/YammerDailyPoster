@@ -1,0 +1,50 @@
+﻿@model List<YammerDailyPosterBLL.Model.MessageInfo>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => Model[0].Schedule)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => Model[0].Subject)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => Model[0].Context)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => Model[0].SentTime)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Schedule)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Subject)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Context)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.SentTime)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.Id }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.Id })
+        </td>
+    </tr>
+}
+
+</table>
